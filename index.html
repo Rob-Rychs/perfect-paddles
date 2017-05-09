@@ -1,6 +1,6 @@
 <!Doctype html>
-<html lang="en"></html>
-<html>
+<html lang="en">
+
   <head>
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
@@ -11,27 +11,29 @@
     <title>Perfect Paddles</title>
    </head>
 
-   <body>
-     <div id="nav">
-   	  <nav>
-   	    <img src="./final-project-assets/images/perfect-paddles-logo.svg" alt="logo">
-   	  		<ul align="right"> 
-   	  			<li><a href="">About</li>
-   	  			<li><a href="">Rentals</li>
-				    <li><a href="">Location</li>
-   	  		</ul>
-   	  </nav>
+   <body> 
+     <div class="navbar">
+       <img src="./final-project-assets/images/perfect-paddles-logo.svg" alt="Perfect Paddles loo"/>
+   	     <span>
+           <nav>
+   	         <a href="#about">ABOUT</a>&nbsp;&nbsp;&nbsp;
+   	  	     <a href="#rentals">RENTALS</a>&nbsp;&nbsp;&nbsp;
+				     <a href="#location">LOCATION</a>		
+   	       </nav>
+       </span> 
      </div>  
 
       <header class="container">
         <p>ENJOY THE</p>
         <h1>Great Outdoors<h1>
         <h3>from the water</h3>
-        <p>Rent our canoes year-round, take a lesson or join a  group a tour.</p>
+        <span><p>Rent our canoes year-round, take a lesson or join a  group a tour.</p></span>
         <button>SIGN ME UP</button>
       </header>
+         
+   
 
-      <section class="container">
+      <section class="container" id="about">
         <h3>About</h3>
         <p>Perfect Paddles Kayak Rentals Co. offers you the unique opportunity to experience the great outdoors in one of our single or double kayaks.  We cater to all skill levels and abilities, and offer a variety of lessons and tours too./p>
       </section>
@@ -42,9 +44,9 @@
         <div class="image"></div>
       </section>
      
-        <div class="rentals">
-        <h3>Rentals</h3>
+        <section class="container" id="rentals">
           <section class="container">
+            <h3>Rentals</h3>
             <p>All rental prices include basic paddles, life jackets, splash protection, and a safety demonstration.</p>
             <p>Please note that we require 24 hours notice for all cancellations, and late returns will be charged accordingly.</p>
             <p>Call (604) 604-6040 to book now!</p>
@@ -52,9 +54,9 @@
           <section class="container">
             <!-- Insert table element and data here. YAY. -->
           </section>
-        </div>
+        </section>
 
-        <div class="location">
+        <secion class="container" id="location">
           <section class="container">
             <h3>Location</h3>
             <p>Come visit us at our location on Cornwall Avenue and Yew Street in Vancouver:</p>
@@ -63,7 +65,7 @@
           <section class="container">
             <-- MAP EMBED HERE  --->
           </section>
-        </div>
+        </section>
 
         <div class="footer"></div></div>
         

@@ -1,5 +1,14 @@
 perfect-paddles.css
-div #nav {
-    background-color: black
-    
+.navbar {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    overflow: hidden;
 }
+
+.main-nav {
+    text-align: right;
+
+}
+
