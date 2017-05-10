@@ -192,7 +192,16 @@ footer {
   padding: var(--padding);
 }
 
+.social nav {
+  display:flex;
+  justify-content: center;
+}
+
 .social a {
   color: var(--anchor-color);
   text-decoration: none;
+}
+
+.social a:hover {
+  color: var(--darker-orange-color);
 }
