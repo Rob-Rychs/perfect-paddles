@@ -1,14 +1,74 @@
-perfect-paddles.css
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-height: 60px;
+  --padding: 15px;
+  --anchor-color: white;
+  --primary-font: 'Karla', sans-serif;
+}
+body {
+  padding-top: var(--navbar-height);
+  font-family: var(--primary-font);
+}
 .navbar {
-    height: 100px;
-    width: 100%;
-    background-color: black;
-    position: fixed;
-    overflow: hidden;
+  max-height: var(--navbar-height);
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.navbar__logo {
+}
+.navbar__logo img {
+  height: auto;
+  padding: var(--padding);
+  max-height: var(--navbar-height);
+}
+
+.navbar__menu li {
+}
+
+.navbar__menu ul {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  list-style: none;
+  height: 100%;
+}
+
+.navbar__menu a {
+  text-decoration: none;
+  color: var(--anchor-color);
+  padding: var(--padding);
 }
 
 .main-nav {
-    text-align: right;
+  text-align: right;
 
 }
 
+.hero-banner{
+  background-image: url('./final-project-assets/images/kayak-bkgd.jpg');
+  background-size: cover;
+  display: flex;
+  height: calc(100vh - var(--navbar-height));
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shade-box {
+  background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.container {
+  max-height:100%;
+  width: 100%;
+}
