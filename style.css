@@ -110,7 +110,7 @@ body {
 }
 
 .hero-banner {
-  background-image: url('./final-project-assets/images/kayak-bkgd.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./final-project-assets/images/kayak-bkgd.jpg');
   background-size: cover;
   display: flex;
   height: calc(100vh - var(--navbar-height));
