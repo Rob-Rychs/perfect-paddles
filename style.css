@@ -1,4 +1,38 @@
-@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css?family=Karla|Pacifico');
+ /*latin-ext */
+
+/* TODO @font-face not working right now 
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Karla'), local('Karla-Regular'), url('/final-project-assets/fonts/Karla-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Karla';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Karla'), local('Karla-Italic'), url('/final-project-assets/fonts/Karla-Italic.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Karla'), local('Karla-Bold'), url('/final-project-assets/fonts/Karla-Bold.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Karla'), local('Karla-BoldItalic'), url('/final-project-assets/fonts/Karla-BoldItalic.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Pacifica';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifica'), local('Pacifica-Regular'), url('/final-project-assets/fonts/Pacifica.ttf') format('ttf');
+}*/
 
 * {
   box-sizing: border-box;
@@ -9,11 +43,24 @@
   --padding: 15px;
   --anchor-color: white;
   --primary-font: 'Karla', sans-serif;
+  --secondary-font: 'Pacifico', cursive;
+  --body-font-color: #2d2d2d;
+  --medium-grey-headings: #646464;
+  --orange-brand-color: #e2574c;
+  --darker-orange-color: #b64036;
+  --table-header-background: #e6e6e6;
+  --grey-table-borders: #c8c8c8;
+  --light-yellow-hovered-table-rows: #fbf6d9;
+  --footer-height: 450px;
 }
+
 body {
   padding-top: var(--navbar-height);
   font-family: var(--primary-font);
+  font-size: 16px;
+  color: var(--body-font-color);
 }
+
 .navbar {
   max-height: var(--navbar-height);
   width: 100%;
@@ -24,8 +71,10 @@ body {
   justify-content: space-between;
   overflow: hidden;
 }
+
 .navbar__logo {
 }
+
 .navbar__logo img {
   height: auto;
   padding: var(--padding);
@@ -33,6 +82,8 @@ body {
 }
 
 .navbar__menu li {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .navbar__menu ul {
@@ -49,12 +100,16 @@ body {
   padding: var(--padding);
 }
 
+ a:hover {
+  color: var(--darker-orange-color);
+}
+
 .main-nav {
   text-align: right;
 
 }
 
-.hero-banner{
+.hero-banner {
   background-image: url('./final-project-assets/images/kayak-bkgd.jpg');
   background-size: cover;
   display: flex;
@@ -65,10 +120,79 @@ body {
 }
 
 .shade-box {
-  background-color: rgba(0, 0, 0, 0.2); 
+  background-color: rgba(0, 0, 0, 0.5); 
+  margin-bottom: var(--padding);
 }
 
 .container {
   max-height:100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1, .container h2 {
+  font-family: var(--secondary-font);
+  padding-top: var(--padding);
+} 
+
+.hero-banner p {
+  color: var(--anchor-color);
+}
+
+.hero-banner p.caps {
+  text-transform: uppercase;
+}
+
+.hero-banner h1 {
+  color: var(--anchor-color);
+  font-size: 72px;
+}
+
+.hero-banner h1.sub-header {
+  color: var(--anchor-color);
+  font-size: 32px;
+  padding-bottom: var(--padding);
+}
+
+.hero-banner button {
+  background-color: var(--orange-brand-color);
+  border: none;
+  color: var(--anchor-color);
+  padding: 10px 18px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: var(--darker-orange-color);
+  color: black;
+}
+
+.container h2 {
+  font-size: 32px;
+  color: var(--medium-grey-headings);
+  padding: var(--padding);
+}
+
+.rentals {
+
+}
+
+footer {
+  max-height: var(--footer-height);
+  color: var(--anchor-color);
+  width: 100%;
+  background-color: var(--body-font-color);
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: var(--padding);
+}
+
+.social a {
+  color: var(--anchor-color);
+  text-decoration: none;
 }
