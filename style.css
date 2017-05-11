@@ -51,7 +51,7 @@
   --table-header-background: #e6e6e6;
   --grey-table-borders: #c8c8c8;
   --light-yellow-hovered-table-rows: #fbf6d9;
-  --footer-height: 450px;
+  --footer-height: 250px;
 }
 
 body {
@@ -131,12 +131,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: var(--padding);
 }
 
 .container h1, .container h2 {
   font-family: var(--secondary-font);
   padding-top: var(--padding);
 } 
+
+.container .sub-header {
+  padding-bottom: var(--padding);
+}
 
 .hero-banner p {
   color: var(--anchor-color);
@@ -148,12 +153,12 @@ body {
 
 .hero-banner h1 {
   color: var(--anchor-color);
-  font-size: 72px;
+  font-size: 120px;
 }
 
 .hero-banner h1.sub-header {
   color: var(--anchor-color);
-  font-size: 32px;
+  font-size: 42px;
   padding-bottom: var(--padding);
 }
 
@@ -161,7 +166,7 @@ body {
   background-color: var(--orange-brand-color);
   border: none;
   color: var(--anchor-color);
-  padding: 10px 18px;
+  padding: 12px 22px;
   border-radius: 20px;
   text-transform: uppercase;
 }
@@ -172,17 +177,75 @@ button:hover {
 }
 
 .container h2 {
-  font-size: 32px;
+  font-size: 42px;
   color: var(--medium-grey-headings);
   padding: var(--padding);
+}
+
+.about {
+  max-height:100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+  padding-left: 320px;
+  padding-right: 320px;
+  text-align: center;
+}
+
+.grid {
+  max-width: 1240px;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-template-areas: "image-1 image-2 image-3";
+  align-content: center;
+  align-items: center;
+}
+
+.image-1 {
+  grid-area: "image-1";
+  max-width: 400px;
+}
+
+.image-2 {
+  grid-area: "image-2";
+  max-width: 400px;
+}
+
+.image-3 {
+  grid-area: "image-3";
+  max-width: 400px;
 }
 
 .rentals {
 
 }
 
+.a-columns {
+  display: inline;
+}
+
+.b-columns {
+  display: inline;
+}
+
+table .rentals-details {
+  
+}
+
+.location p {
+  padding: var(--padding);
+}
+
+.map-embed {
+  
+}
+
 footer {
-  max-height: var(--footer-height);
+  height: var(--footer-height);
   color: var(--anchor-color);
   width: 100%;
   background-color: var(--body-font-color);
@@ -192,14 +255,19 @@ footer {
   padding: var(--padding);
 }
 
-.social nav {
-  display:flex;
-  justify-content: center;
+footer .greyscale {
+  color: grey;
+}
+
+.social ul {
+  display: inline;
+  vertical-align: middle;
 }
 
 .social a {
   color: var(--anchor-color);
   text-decoration: none;
+  vertical-align: middle;
 }
 
 .social a:hover {
