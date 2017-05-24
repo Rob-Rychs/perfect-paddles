@@ -1,37 +1,63 @@
-/*@import url('https://fonts.googleapis.com/css?family=Karla|Pacifico');*/
-
- /*TODO @font-face not working right now 
-@font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Karla'), local('Karla-Regular'), url('/final-project-assets/fonts/Karla-Regular.ttf') format('ttf');
-}
 
 @font-face {
-  font-family: 'Karla';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Karla'), local('Karla-Italic'), url('/final-project-assets/fonts/Karla-Italic.ttf') format('ttf');
-}
-@font-face {
-  font-family: 'Karla';
+  font-family: 'Karla-Regular';
+  src: url('./final-project-assets/fonts/Karla-Regular.eot');
+  src: url('./final-project-assets/fonts/Karla-Regular.woff2') format('woff2'),
+       url('./final-project-assets/fonts/Karla-Regular.woff') format('woff'),
+       url('./final-project-assets/fonts/Karla-Regular.ttf') format('truetype'),
+       url('./final-project-assets/fonts/Karla-Regular.svg#Karla-Regular') format('svg'),
+       url('./final-project-assets/fonts/Karla-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 700;
-  src: local('Karla'), local('Karla-Bold'), url('/final-project-assets/fonts/Karla-Bold.ttf') format('ttf');
 }
+
 @font-face {
-  font-family: 'Karla';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Karla'), local('Karla-BoldItalic'), url('/final-project-assets/fonts/Karla-BoldItalic.ttf') format('ttf');
-}
-@font-face {
-  font-family: 'Pacifica';
+  font-family: 'Karla-Italic';
+  src: url('./final-project-assets/fonts/Karla-Italic.eot');
+  src: url('./final-project-assets/fonts/Karla-Italic.woff2') format('woff2'),
+       url('./final-project-assets/fonts/Karla-Italic.woff') format('woff'),
+       url('./final-project-assets/fonts/Karla-Italic.ttf') format('truetype'),
+       url('./final-project-assets/fonts/Karla-Italic.svg#Karla-Italic') format('svg'),
+       url('./final-project-assets/fonts/Karla-Italic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
-  src: local('Pacifica'), local('Pacifica-Regular'), url('/final-project-assets/fonts/Pacifica.ttf') format('ttf');
-}*/
+}
+
+@font-face {
+  font-family: 'Karla-Bold';
+  src: url('./final-project-assets/fonts/Karla-Bold.eot');
+  src: url('./final-project-assets/fonts/Karla-Bold.woff2') format('woff2'),
+       url('./final-project-assets/fonts/Karla-Bold.woff') format('woff'),
+       url('./final-project-assets/fonts/Karla-Bold.ttf') format('truetype'),
+       url('./final-project-assets/fonts/Karla-Bold.svg#Karla-Bold') format('svg'),
+       url('./final-project-assets/fonts/Karla-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karla-BoldItalic';
+  src: url('./final-project-assets/fonts/Karla-BoldItalic.eot');
+  src: url('./final-project-assets/fonts/Karla-BoldItalic.woff2') format('woff2'),
+       url('./final-project-assets/fonts/Karla-BoldItalic.woff') format('woff'),
+       url('./final-project-assets/fonts/Karla-BoldItalic.ttf') format('truetype'),
+       url('./final-project-assets/fonts/Karla-BoldItalic.svg#Karla-BoldItalic') format('svg'),
+       url('./final-project-assets/fonts/Karla-BoldItalic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('./final-project-assets/fonts/Pacifico.eot');
+  src: url('./final-project-assets/fonts/Pacifico.woff2') format('woff2'),
+       url('./final-project-assets/fonts/Pacifico.woff') format('woff'),
+       url('./final-project-assets/fonts/Pacifico.ttf') format('truetype'),
+       url('./final-project-assets/fonts/Pacifico.svg#Pacifico') format('svg'),
+       url('./final-project-assets/fonts/Pacifico.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
@@ -230,17 +256,46 @@ button:hover {
   
 }
 
-.a-columns {
-  float: left;
+.rentals-row {
+  display: flex;
+  flex-direction: row;
 }
 
-.b-columns {
+.paragraphs {
+  order: 1;
+  width: 50%;
+}
+
+.table {
+  order: 2;
+  width: 50%;
+}
+
+.phone-number {
+  color: var(--darker-orange-color);
+  text-decoration-line: underline;
   display: inline;
-  float: right;
 }
 
-table .rentals-details {
-  
+ table {
+  width: 420px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th { 
+  border: 1px solid #CCC; 
+  height: 30px;
+  }
+
+  th {
+background: #F3F3F3; 
+font-weight: bold; 
+}
+
+td {
+  text-align: center;
 }
 
 .location p {
@@ -276,6 +331,8 @@ footer .greyscale {
   color: var(--anchor-color);
   text-decoration: none;
   vertical-align: middle;
+  align-content: center;
+  line-height: 1.5;
 }
 
 .social a:hover {
