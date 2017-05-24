@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Karla|Pacifico');
- /*latin-ext */
+/*@import url('https://fonts.googleapis.com/css?family=Karla|Pacifico');*/
 
-/* TODO @font-face not working right now 
+ /*TODO @font-face not working right now 
 @font-face {
   font-family: 'Karla';
   font-style: normal;
@@ -41,6 +40,7 @@
 :root {
   --navbar-height: 60px;
   --padding: 15px;
+  --grid-padding: var(--padding);
   --anchor-color: white;
   --primary-font: 'Karla', sans-serif;
   --secondary-font: 'Pacifico', cursive;
@@ -183,53 +183,60 @@ button:hover {
 }
 
 .about {
+  height: 300px;
   max-height:100%;
   width: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: var(--padding);
-  padding-left: 320px;
-  padding-right: 320px;
   text-align: center;
+}
+
+.about p {
+  line-height: 1.5;
 }
 
 .grid {
   max-width: 1240px;
-  display: inline-grid;
+  padding: var(--grid-padding);
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 15px;
-  grid-template-areas: "image-1 image-2 image-3";
+  grid-column-gap: var(--grid-padding);
   align-content: center;
   align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
 }
 
 .image-1 {
-  grid-area: "image-1";
   max-width: 400px;
 }
 
 .image-2 {
-  grid-area: "image-2";
   max-width: 400px;
 }
 
 .image-3 {
-  grid-area: "image-3";
   max-width: 400px;
 }
 
 .rentals {
-
+  
 }
 
 .a-columns {
-  display: inline;
+  float: left;
 }
 
 .b-columns {
   display: inline;
+  float: right;
 }
 
 table .rentals-details {
@@ -241,7 +248,8 @@ table .rentals-details {
 }
 
 .map-embed {
-  
+  width: 100%;
+  align-content: center;
 }
 
 footer {
