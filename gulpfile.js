@@ -4,7 +4,27 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-const autoReload = require('gulp-auto-reload');
+var autoReload = require('gulp-auto-reload');
+var optimizejs = require('gulp-optimize-js');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+var gutil = require('gulp-util');
+
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src('./*.js'),
+        uglify(),
+        gulp.dest('js')
+    ],
+    cb
+  );
+});
+
+gulp.task('optimize', function() {
+  gulp.src('./js/*.js')
+    .pipe(optimizejs(options))
+    .pipe(gulp.dest('./dist/'))
+});
 
 var htmlInject = function () {
   return gutil.noop();
@@ -43,7 +63,7 @@ gulp.task('reloader', function () {
 // );
 
 // building html/css causes no <script> injection 
-gulp.task('default', ['html', 'sass']);
+gulp.task('default', ['html', 'sass', 'compress', 'optimize']);
 
 gulp.task('sass', () =>
   gulp.src('./sass/mobile.scss')
