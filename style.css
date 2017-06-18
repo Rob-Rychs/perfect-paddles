@@ -1,64 +1,4 @@
-
-@font-face {
-  font-family: 'Karla-Regular';
-  src: url('./final-project-assets/fonts/Karla-Regular.eot');
-  src: url('./final-project-assets/fonts/Karla-Regular.woff2') format('woff2'),
-       url('./final-project-assets/fonts/Karla-Regular.woff') format('woff'),
-       url('./final-project-assets/fonts/Karla-Regular.ttf') format('truetype'),
-       url('./final-project-assets/fonts/Karla-Regular.svg#Karla-Regular') format('svg'),
-       url('./final-project-assets/fonts/Karla-Regular.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Karla-Italic';
-  src: url('./final-project-assets/fonts/Karla-Italic.eot');
-  src: url('./final-project-assets/fonts/Karla-Italic.woff2') format('woff2'),
-       url('./final-project-assets/fonts/Karla-Italic.woff') format('woff'),
-       url('./final-project-assets/fonts/Karla-Italic.ttf') format('truetype'),
-       url('./final-project-assets/fonts/Karla-Italic.svg#Karla-Italic') format('svg'),
-       url('./final-project-assets/fonts/Karla-Italic.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Karla-Bold';
-  src: url('./final-project-assets/fonts/Karla-Bold.eot');
-  src: url('./final-project-assets/fonts/Karla-Bold.woff2') format('woff2'),
-       url('./final-project-assets/fonts/Karla-Bold.woff') format('woff'),
-       url('./final-project-assets/fonts/Karla-Bold.ttf') format('truetype'),
-       url('./final-project-assets/fonts/Karla-Bold.svg#Karla-Bold') format('svg'),
-       url('./final-project-assets/fonts/Karla-Bold.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Karla-BoldItalic';
-  src: url('./final-project-assets/fonts/Karla-BoldItalic.eot');
-  src: url('./final-project-assets/fonts/Karla-BoldItalic.woff2') format('woff2'),
-       url('./final-project-assets/fonts/Karla-BoldItalic.woff') format('woff'),
-       url('./final-project-assets/fonts/Karla-BoldItalic.ttf') format('truetype'),
-       url('./final-project-assets/fonts/Karla-BoldItalic.svg#Karla-BoldItalic') format('svg'),
-       url('./final-project-assets/fonts/Karla-BoldItalic.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Pacifico';
-  src: url('./final-project-assets/fonts/Pacifico.eot');
-  src: url('./final-project-assets/fonts/Pacifico.woff2') format('woff2'),
-       url('./final-project-assets/fonts/Pacifico.woff') format('woff'),
-       url('./final-project-assets/fonts/Pacifico.ttf') format('truetype'),
-       url('./final-project-assets/fonts/Pacifico.svg#Pacifico') format('svg'),
-       url('./final-project-assets/fonts/Pacifico.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
+/*desktop first css*/
 * {
   box-sizing: border-box;
 }
@@ -128,11 +68,6 @@ body {
 
  a:hover {
   color: var(--darker-orange-color);
-}
-
-.main-nav {
-  text-align: right;
-
 }
 
 .hero-banner {

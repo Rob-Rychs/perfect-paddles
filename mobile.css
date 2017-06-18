@@ -1,0 +1,465 @@
+/* mobile first css. TODO: Re-implement Gulp-autoprefixer. Make button smaller. Clean up multiple CSS media-queries. Re-write footer style for mobile-first CSS from desktop-first CSS. Finish double implementation of google map 1.iframe wrapped in a clear transparent div to disable the scroll (size correctly with z-index to bring on top of map.) 2.Generate map with the google Javascript API. Build a webform for signing-up button. Make page an AMP. */
+
+* {
+  box-sizing: border-box;
+}
+
+/*screen-reader accessibility hack*/
+.screen-reader-text {
+   clip: rect(1px, 1px, 1px, 1px);
+   position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+}
+
+/*screen-reader accessibility hack of hack*/
+.screen-reader-text:focus {
+   clip: auto !important;
+   display: block;
+   height: auto;
+   left: 5px;
+   top: 5px;
+   width: auto;
+   z-index: 100000; /* above all content */
+}
+
+#about:focus {
+   outline: 0;
+}
+
+/* assign project specs as variable in the :root folder */
+:root {
+  --navbar-height: 150px;
+  --padding: 15px;
+  --grid-padding: var(--padding);
+  --anchor-color: white;
+  --anchor-color-hover: var(--darker-orange-color);
+  --primary-font: 'Karla', sans-serif;
+  --secondary-font: 'Pacifico', cursive;
+  --body-font-color: #2d2d2d;
+  --medium-grey-headings: #646464;
+  --orange-brand-color: #e2574c;
+  --darker-orange-color: #b64036;
+  --table-header-background: #e6e6e6;
+  --grey-table-borders: #c8c8c8;
+  --light-yellow-hovered-table-rows: #fbf6d9;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: var(--body-font-color);
+}
+
+.navbar {
+  max-height: var(--navbar-height);
+  width: 100%;
+  background-color: black;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--padding);
+}
+
+.navbar__logo {
+  width: 60%;
+}
+
+.navbar__logo #logo {
+  max-width: 100%;
+  height: auto;
+  padding-bottom: var(--padding);
+}
+
+.navbar__menu {
+   width: 100%;
+}
+
+.navbar__menu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  justify-content: space-around; 
+  flex-direction: row;
+}
+
+.navbar__menu li {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: var(--padding);
+}
+
+.navbar__menu a {
+  color: var(--anchor-color);
+  text-decoration: none;
+}
+
+.navbar__menu a:hover, .navbar__menu a:active {
+  color: var(--anchor-color-hover);
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .navbar__logo {
+  width: 40%;
+  }
+
+  .navbar__menu {
+    padding: var(--padding);
+    width: 50%;
+    margin-right: var(--padding);
+  }
+  .navbar__menu ul {
+   align-items: right;
+   justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .navbar__menu {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .navbar__menu {
+    width: 30%;
+  }
+  .hero-banner p.caps {
+    margin-top: 100px;
+  }
+}
+
+.hero-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./final-project-assets/images/kayak-bkgd.jpg') center;
+  background-size: cover;
+  display: flex;
+  height: calc(100vh);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: var(--navbar-height);
+}
+
+.shade-box {
+  background-color: rgba(0, 0, 0, 0.5); 
+  margin-bottom: var(--padding);
+  padding: var(--padding);
+}
+
+.shade-box p {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+}
+
+.container h1 {
+  font-family: var(--secondary-font);
+  padding-top: var(--padding);
+} 
+
+.container .sub-header {
+  padding-bottom: var(--padding);
+}
+
+.hero-banner p {
+  color: var(--anchor-color);
+}
+
+.hero-banner p.caps {
+  text-transform: uppercase;
+}
+
+.hero-banner h1 {
+  color: var(--anchor-color);
+  font-size: 2.2rem;
+}
+
+.hero-banner h2.sub-header {
+  color: var(--anchor-color);
+  font-size: 1.5rem;
+  padding-bottom: var(--padding);
+}
+
+.hero-banner button {
+  background-color: var(--orange-brand-color);
+  border: none;
+  color: var(--anchor-color);
+  padding: 18px 18px;
+  border-radius: 48px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  background-color: var(--darker-orange-color);
+  color: black;
+}
+
+.container h2 {
+  font-family: var(--secondary-font);
+  font-size: 42px;
+  color: var(--medium-grey-headings);
+  padding: var(--padding);
+}
+
+@media only screen and (min-width: 400px) {
+  .hero-banner h1 {
+    font-size: 3.5rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .hero-banner h1 {
+    font-size: 4.5rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 3.2rem;
+  }
+
+}
+
+@media only screen and (min-width: 800px) {
+  .hero-banner h1 {
+    font-size: 6rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 3.7rem;
+  }
+}
+
+/*@media only screen and (min-width: 1140px) {
+  .hero-banner h1 {
+    font-size: 9rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 4.7rem;
+  }
+}*/
+
+.container h2 {
+  font-size: 42px;
+  color: var(--medium-grey-headings);
+  padding: var(--padding);
+  padding-bottom: var(--padding);
+}
+
+.about {
+  height: 300px;
+  max-height:100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+  text-align: center;
+}
+
+body p {
+  line-height: 2;
+}
+
+/* TODO add responsiveness to about text section
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+}
+*/
+
+.img__grid img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .img__grid {
+  padding: var(--grid-padding);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: var(--grid-padding);
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  }
+  .about p {
+    width:60%;
+  }
+}
+
+.rentals h2 {
+  padding-top: 60px;
+}
+
+.rentals-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding);
+  justify-content: space-between;
+}
+
+.paragraphs {
+  order: 1;
+}
+
+.paragraphs p.last {
+  padding-bottom: var(--padding);
+}
+
+.table {
+  order: 2;
+  width: 90%;
+}
+
+.phone-number {
+  color: var(--darker-orange-color);
+  text-decoration-line: underline;
+  display: inline;
+}
+
+ table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: var(--padding);
+}
+
+td, th { 
+  border: 1px solid #CCC; 
+  height: 30px;
+  }
+
+  th {
+background: #F3F3F3; 
+font-weight: bold; 
+}
+
+td {
+  text-align: center;
+}
+
+.rental-details td:hover {
+  background-color: var(--light-yellow-hovered-table-rows);
+}
+
+@media only screen and (min-width: 600px) {
+  .rentals-row {
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding);
+  justify-content: space-between;
+  }
+.table {
+  width: 50%;
+  padding: var(--padding);
+}
+.paragraphs {
+  width: 50%;
+  padding: var(--padding);
+  }  
+}
+
+.location p {
+  padding: var(--padding);
+}
+
+.location h2 {
+  padding-top: 60px;
+}
+
+#map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+
+.opacity-cover {
+  opacity: 10;
+  z-index: -100;
+}
+
+.map-embed {
+  width: 100%;
+  align-content: center;
+}
+
+footer {
+  color: var(--anchor-color);
+  width: 100%;
+  background-color: var(--body-font-color);
+  padding: var(--padding);
+}
+
+footer .footer-text {
+  text-align: center;
+}
+footer .greyscale {
+  color: grey;
+}
+
+.social ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 800px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .social span {
+    display: inline-block;
+  }
+}
+
+.social {
+  text-align: center;
+}
+.social a {
+  color: var(--anchor-color);
+  text-decoration: none;
+  align-content: center;
+  line-height: 1.5;
+}
+
+.social span {
+  display: none;
+}
+
+.social a:hover {
+  color: var(--darker-orange-color);
+}
+
+ .social li {
+  display: inline-block;
+}
+
+.fa {
+  display: inline-block;
+}

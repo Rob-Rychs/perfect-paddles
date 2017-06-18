@@ -1,0 +1,22 @@
+{
+  "name": "perfect-paddles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Rob-Rychs/perfect-paddles.git",
+  "author": "Rob-Rychs <Robrychel@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.3.2",
+    "gulp": "^3.9.1",
+    "gulp-auto-reload": "^0.1.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0"
+  },
+  "scripts": {
+    "sass": "gulp sass && gulp default",
+    "watch": "gulp sass && gulp watch",
+    "install": "gulp sass"
+  }
+}

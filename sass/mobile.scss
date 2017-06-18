@@ -1,0 +1,481 @@
+/* mobile first css. TODO add line-height to all p tags. Clean up multiple CSS media-queries. Re-write footer style for mobile-first CSS from desktop-first CSS. Finish double implementation of google map 1.iframe wrapped in a clear transparent div to disable the scroll (size correctly with z-index to bring on top of map.) 2.Generate map with the google Javascript API. Build a webform for signing-up button. Make page an AMP. */
+* {
+  box-sizing: border-box;
+}
+
+/*screen-reader accessibility hack*/
+.screen-reader-text {
+   clip: rect(1px, 1px, 1px, 1px);
+   position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+}
+
+/*screen-reader accessibility hack of hack*/
+.screen-reader-text:focus {
+   clip: auto !important;
+   display: block;
+   height: auto;
+   left: 5px;
+   top: 5px;
+   width: auto;
+   z-index: 100000; /* above all content */
+}
+
+#about:focus {
+   outline: 0;
+}
+
+// Sass $variables: blue; 
+
+/* assign project specs as variable in the :root folder */
+:root {
+  --navbar-height: 150px;
+  --padding: 15px;
+  --grid-padding: var(--padding);
+  --anchor-color: white;
+  --anchor-color-hover: var(--darker-orange-color);
+  --primary-font: 'Karla', sans-serif;
+  --secondary-font: 'Pacifico', cursive;
+  --body-font-color: #2d2d2d;
+  --medium-grey-headings: #646464;
+  --orange-brand-color: #e2574c;
+  --darker-orange-color: #b64036;
+  --table-header-background: #e6e6e6;
+  --grey-table-borders: #c8c8c8;
+  --light-yellow-hovered-table-rows: #fbf6d9;
+  --footer-height: 250px;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: var(--body-font-color);
+}
+
+.navbar {
+  max-height: var(--navbar-height);
+  width: 100%;
+  background-color: black;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--padding);
+  @media only screen and (min-width: 1140px) {
+    position: fixed;
+  }
+}
+
+.navbar__logo {
+  width: 60%;
+  @media only screen and (min-width: 600px) {
+    width: 40%;
+  }
+  #logo {
+  max-width: 100%;
+  height: auto;
+  padding-bottom: var(--padding);
+  }
+}
+
+.navbar__menu {
+   width: 100%;
+   @media only screen and (min-width: 600px) {
+    padding: var(--padding);
+    width: 50%;
+    margin-right: var(--padding); 
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+   }
+   @media only screen and (min-width: 800px) {
+    width: 40%;
+   }
+   @media only screen and (min-width: 1140px) {
+    width: 30%;
+   }
+   ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; 
+    -webkit-box-orient: horizontal; 
+    -webkit-box-direction: normal; 
+    -ms-flex-direction: row; 
+    flex-direction: row;
+    @media only screen and (min-width: 600px) {
+      -webkit-box-align: right;
+      -ms-flex-align: right;
+      align-items: right;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+  }
+  li {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: var(--padding);
+  }
+  a {
+    color: var(--anchor-color);
+    text-decoration: none;
+    &:hover, &:active {
+      color: var(--anchor-color-hover);
+    }
+  }
+}
+
+.hero-banner {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url('./final-project-assets/images/kayak-bkgd.jpg') center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./final-project-assets/images/kayak-bkgd.jpg') center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  top: var(--navbar-height);
+  p {
+  color: var(--anchor-color);
+  }
+  p.caps {
+  text-transform: uppercase;
+  }
+  h1 {
+  color: var(--anchor-color);
+  font-size: 2.2rem;
+  }
+  h2.sub-header {
+  color: var(--anchor-color);
+  font-size: 1.5rem;
+  padding-bottom: var(--padding);
+  }
+  button {
+  background-color: var(--orange-brand-color);
+  border: none;
+  color: var(--anchor-color);
+  padding: 30px 32px;
+  border-radius: 64px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  &:hover {
+  background-color: var(--darker-orange-color);
+  color: black;
+    }
+  }
+}
+
+.shade-box {
+  background-color: rgba(0, 0, 0, 0.5); 
+  margin-bottom: var(--padding);
+  padding: var(--padding);
+  p {
+    text-align: center;
+  }
+}
+
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: var(--padding);
+  h1, h2 {
+    font-family: var(--secondary-font);
+    padding-top: var(--padding);
+  } 
+  .sub-header {
+    padding-bottom: var(--padding);
+  }
+  h2 {
+  font-size: 42px;
+  color: var(--medium-grey-headings);
+  padding: var(--padding);
+  }
+} 
+
+@media only screen and (min-width: 400px) {
+  .hero-banner h1 {
+    font-size: 3.5rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .hero-banner h1 {
+    font-size: 4.5rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 3.2rem;
+  }
+
+}
+
+@media only screen and (min-width: 800px) {
+  .hero-banner h1 {
+    font-size: 6rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 3.7rem;
+  }
+}
+
+/*@media only screen and (min-width: 1140px) {
+  .hero-banner h1 {
+    font-size: 9rem;
+  }
+  .hero-banner h2.sub-header {
+    font-size: 4.7rem;
+  }
+}*/
+
+.container h2 {
+  font-size: 42px;
+  color: var(--medium-grey-headings);
+  padding: var(--padding);
+  padding-bottom: var(--padding);
+}
+
+.about {
+  height: 300px;
+  max-height:100%;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: var(--padding);
+  text-align: center;
+}
+
+.about p {
+  line-height: 1.5;
+}
+
+/* TODO add responsiveness to about text section
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+}
+*/
+
+.img__grid img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .img__grid {
+  padding: var(--grid-padding);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: var(--grid-padding);
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  }
+  .about p {
+    width:60%;
+  }
+}
+
+.rentals {
+  
+}
+
+.rentals-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: var(--padding);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.paragraphs {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+.paragraphs p.last {
+  padding-bottom: var(--padding);
+}
+
+.table {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.phone-number {
+  color: var(--darker-orange-color);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  display: inline;
+}
+
+ table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: var(--padding);
+}
+
+td, th { 
+  border: 1px solid #CCC; 
+  height: 30px;
+  }
+
+th {
+  background: #F3F3F3; 
+  font-weight: bold; 
+}
+
+td {
+  text-align: center;
+}
+
+.rental-details td:hover {
+  background-color: var(--light-yellow-hovered-table-rows);
+}
+
+@media only screen and (min-width: 600px) {
+  .rentals-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: var(--padding);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  }
+.table {
+  width: 50%;
+  padding: var(--padding);
+}
+.paragraphs {
+  width: 50%;
+  padding: var(--padding);
+  }  
+}
+
+.location p {
+  padding: var(--padding);
+}
+
+#map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+
+/*.map-embed {
+  width: 100%;
+  align-content: center;
+}*/
+
+footer {
+  height: var(--footer-height);
+  color: var(--anchor-color);
+  width: 100%;
+  background-color: var(--body-font-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: var(--padding);
+}
+
+footer .greyscale {
+  color: grey;
+}
+
+.social ul {
+  display: inline;
+  vertical-align: middle;
+}
+
+.social a {
+  color: var(--anchor-color);
+  text-decoration: none;
+  vertical-align: middle;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  line-height: 1.5;
+}
+
+.social a:hover {
+  color: var(--darker-orange-color);
+}
