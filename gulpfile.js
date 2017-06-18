@@ -12,7 +12,7 @@ var gutil = require('gulp-util');
 
 gulp.task('compress', function (cb) {
   pump([
-        gulp.src('./*.js'),
+        gulp.src('./*site.js'),
         uglify(),
         gulp.dest('js')
     ],
@@ -23,7 +23,7 @@ gulp.task('compress', function (cb) {
 gulp.task('optimize', function() {
   gulp.src('./js/*.js')
     .pipe(optimizejs(options))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('dist'))
 });
 
 var htmlInject = function () {
