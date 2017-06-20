@@ -234,7 +234,10 @@ button:hover {
   .hero-banner h2.sub-header {
     font-size: 3.2rem;
   }
-
+  .rentals p {
+    text-align: left;
+    padding-left: var(--padding);
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -376,6 +379,7 @@ td {
 .table {
   width: 50%;
   padding: var(--padding);
+  min-height:225px;
 }
 .paragraphs {
   width: 50%;
@@ -435,6 +439,9 @@ footer .greyscale {
   .social span {
     display: inline-block;
   }
+  footer .footer-text {
+    text-align: left;
+    padding: var(--padding);
 }
 
 .social {
