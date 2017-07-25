@@ -429,21 +429,6 @@ footer .greyscale {
   display: inline-block;
   vertical-align: middle;
 }
-
-@media only screen and (min-width: 800px) {
-  footer {
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-  }
-  .social span {
-    display: inline-block;
-  }
-  footer .footer-text {
-    text-align: left;
-    padding: var(--padding);
-}
-
 .social {
   text-align: center;
 }
@@ -469,3 +454,27 @@ footer .greyscale {
 .fa {
   display: inline-block;
 }
+
+@media only screen and (min-width: 800px) {
+  .social {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .social li {
+    display: block;
+  }
+  .social span {
+    display: inline-block;
+  }
+  footer .footer-text {
+    text-align: left;
+    padding: var(--padding);
+  }  
+  .footcontainer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
